@@ -56,23 +56,25 @@
 			
 			<div class="form-group">
 				<div class="col-sm-9 col-sm-offset-4">
-					<button type="submit" class="btn btn-primary" value="Sign up">Submit</button>
+					<button type="submit" class="btn btn-primary" value="Sign up">3) Submit</button>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
+
 	<table>
-	<tbody>
-		<tr>
-			<td>Email: </td>
-        	<td><input type="text"></td>
-      		<td>Comment: </td>
-        	<td><input type="text"></td>
-		</tr>
-	</tbody>
+		<tbody>
+			<tr>
+				<td> Email: </td>
+				<td><input type="text"></td>
+				<td> Comment: </td>
+				<td><input type="text"></td>
+			</tr>
+		</tbody>
 	</table>
-	<button id="addrow">ADD ROW</button>
+	<button id="addrow">4) ADD ROW</button>
+	
 </body>
 </html>
 	<script src="./jquery-3.1.1.min.js" type="text/javascript" ></script>
@@ -98,7 +100,7 @@
 		} );
 	   $.validator.addMethod('divisible', function(value, element) {
         return parseInt(value) % 10 == 0
-    }, 'S? ph?i chia h?t cho 10');
+    }, 'So phai chia het cho 10');
 	$(document).ready( function () {
 			$( "#signupForm" ).validate( {
 				rules: {
@@ -118,17 +120,17 @@
 					}
 				},
 				messages: {
-					SoA: "Vui Lòng nhap so",
+					SoA: "Vui Long nhap so",
 					SoB: "so không chia het cho 10",
 					SoA: {
-						required: "vui lòng nhap so",
+						required: "vui Long nhap so",
 					},
 					SoB: {
-						required: "Vui lòng nhap so",
+						required: "Vui Long nhap so",
 					},
 					SoC: {
-						required: "Vui lòng nhap so",
-						minlength: "Vui lòng nhap so có 7 chu so"
+						required: "Vui Long nhap so",
+						minlength: "Vui Long nhap so có 7 chu so"
 					}
 				},
 				errorElement: "em",
