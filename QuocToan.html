@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" type="text/css" href="./bootstrap.min.css"> 	
+	<style>
+		.myclass{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div style="background-color: yellow" id="changeColor">
+		<p> TEXT</p>
+		<button id="btnchangeColor">1)Click me!</button>
+	</div
+	
+	<div>
+		<h1 id="add">2) Add Solution</h1>
+		<p class="a">First Paragraph</p>
+		<p class="a">Second Pragraph</p>
+	</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Cau 3</h3>
+	</div>
+	<div class="panel-body">
+		<form id="signupForm" method="post" class="form-horizontal" action="">
+			<div class="form-group">
+				<div class="col-sm-5">
+					<label class="col-sm-4 control-label" for="SoA">Some number</label>
+					<input type="number" class="form-control" id="SoA" name="SoA" placeholder=" So A" />
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<div class="col-sm-5">
+					<label class="col-sm-4 control-label" for="SoB">Some number</label>
+					<input type="number" class="form-control" id="SoB" name="SoB" placeholder="So B" />
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<div class="col-sm-5">
+					<label class="col-sm-4 control-label" for="SoC">Some number</label>
+					<input type="number" class="form-control" id="SoC" name="SoC" placeholder="SoC" />
+				</div>
+			</div
+			
+			
+			<div class="form-group">
+				<div class="col-sm-9 col-sm-offset-4">
+					<button type="submit" class="btn btn-primary" value="Sign up">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+	<table>
+	<tbody>
+		<tr>
+			<td>Email: </td>
+        	<td><input type="text"></td>
+      		<td>Comment: </td>
+        	<td><input type="text"></td>
+		</tr>
+	</tbody>
+	</table>
+	<button id="addrow">ADD ROW</button>
+</body>
+</html>
+	<script src="./jquery-3.1.1.min.js" type="text/javascript" ></script>
+	<script src="./bootstrap.min.js" type="text/javascript"> </script>
+	<script src="./jquery.validate.js" type="text/javascript"></script>
+<script>
+	$('#btnchangeColor').on('click',function() {
+		$('#changeColor').css('background-color','red') 
+	})
+	$('#add').click(function(){
+		$('p').attr('class','myclass');
+	})
+	$('#addrow').click(function() {
+		$('table').append('<tr><td>email</td><td><input type="text"></td><td>comment</td><td><input type="text"></td></td></tr>')
+	});
+</script
+<script type="text/javascript">
+<script>
+	$.validator.setDefaults( {
+			submitHandler: function () {
+				alert( "Thành công!" );
+			}
+		} );
+	   $.validator.addMethod('divisible', function(value, element) {
+        return parseInt(value) % 10 == 0
+    }, 'S? ph?i chia h?t cho 10');
+	$(document).ready( function () {
+			$( "#signupForm" ).validate( {
+				rules: {
+					SoA: "required",
+					SoB: "required",
+					SoC: "required",
+					SoA: {
+						required: true,
+					},
+					SoB: {
+						required: true,
+						divisible: true
+					},
+					SoC: {
+						required: true,
+						minlength: 7,
+					}
+				},
+				messages: {
+					SoA: "Vui Lòng nhap so",
+					SoB: "so không chia het cho 10",
+					SoA: {
+						required: "vui lòng nhap so",
+					},
+					SoB: {
+						required: "Vui lòng nhap so",
+					},
+					SoC: {
+						required: "Vui lòng nhap so",
+						minlength: "Vui lòng nhap so có 7 chu so"
+					}
+				},
+				errorElement: "em",
+				errorPlacement: function ( error, element ) {
+					// Add the `help-block` class to the error element
+					error.addClass( "help-block" );
+
+					if ( element.prop( "type" ) === "checkbox" ) {
+						error.insertAfter( element.parent( "label" ) );
+					} else {
+						error.insertAfter( element );
+					}
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+				},
+				unhighlight: function (element, errorClass, validClass) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+				}
+			} );
+		})
+</script>
